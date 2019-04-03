@@ -3,4 +3,4 @@ Arduino Musical Effects Pedal. Example effects I was able to implement were dela
 
 ![Finished Circuit](https://raw.githubusercontent.com/Toback/ArduinoEffectsPedal/master/Results/Circuit.png)
 
-[test][https://raw.githubusercontent.com/Toback/ArduinoEffectsPedal/master/Results/Reverb_Example.wav]
+[test][https://raw.githubusercontent.com/Toback/ArduinoEffectsPedal/master/Results/Reverb_Exae.wav]
