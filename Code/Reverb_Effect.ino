@@ -54,7 +54,6 @@ unsigned int i = 0;//index variable
 unsigned int iReverb = 0;//reverb variable
 
 void setup(){
-  //Serial.begin(115200); 
   DDRD=0xFE;//set digital pins 0-7 as outputs
   DDRB=0xFD;//set digital pins 10-13 as outputs, 9 as input
   DDRC=0x00;//set all analog pins as inputs
