@@ -51,7 +51,7 @@ int reverbPot = 0;
 
 //data retrieval variables
 unsigned int i = 0;//index variable
-unsigned int iReverb = 0;//reverb variable
+unsigned int iReverb = 10;//reverb variable
 
 void setup(){
   DDRD=0xFE;//set digital pins 0-7 as outputs
@@ -97,22 +97,24 @@ void setup(){
 
 ISR(ADC_vect) {//when new ADC value ready
   
-  if(loading == true)
+  if(loading == true)//If the program just started and buffer's not full
   {
-    buffer1[i] = ADCH;
+    buffer1[i] = ADCH;//Store values in buffer
     i++;
-    if(i>=SIZE)
+    if(i>=SIZE)//Once the buffer is full then reset the index and start
+	       //outputting to speakers
     {
       i=0;
-      iReverb=10;
       loading=false;
     }
   }
   else
   {
-    buffer1[i] = ADCH;
-    PORTD = (wet*int(buffer1[iReverb]) + dry*int(ADCH))>>4;
-    i=(i+1)%SIZE;
+    buffer1[i] = ADCH;//Store values
+    PORTD = (wet*int(buffer1[iReverb]) + dry*int(ADCH))>>4;//output mix
+	  						   //of reverb
+	  						   //and dry signal
+    i=(i+1)%SIZE;//Increment indices and make sure within range of buffer
     iReverb=(iReverb+1)%SIZE;
   }
 }
