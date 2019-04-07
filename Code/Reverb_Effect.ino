@@ -8,7 +8,7 @@
  * playback head follows close behind it, sending out the recorded audio 
  * to a speaker. 
  * 
- * Reberb is implemented by having two playback heads, one immediately 
+ * Reverb is implemented by having two playback heads, one immediately 
  * behind where recording is taking place in the buffer, and the other a 
  * variable amount behind the first playback head. Then, the signal sent
  * out to the speaker is a linear combination of the buffer values at 
